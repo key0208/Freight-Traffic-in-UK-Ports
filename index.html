@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Port Cargo Statistics</title>
+    <!-- Import Libre Baskerville font -->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Maptiler GL JS CSS -->
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.css" rel="stylesheet" />
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Import external CSS file -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading indicator -->
+    <div id="loading">
+        Loading, please wait...
+    </div>
+
+    <!-- Map container -->
+    <div id="map"></div>
+
+    <!-- Control panel and legend container -->
+    <div id="control-legend-panel">
+        <!-- Control panel -->
+        <div id="controls">
+            <!-- Main title -->
+            <h1>Freight Traffic in UK Ports</h1>
+            <!-- Subtitle -->
+            <h2>
+                Data Source: 
+                <a href="https://www.gov.uk/government/statistical-data-sets/port-and-domestic-waterborne-freight-statistics-port#contents" target="_blank">
+                    UK Port Statistics
+                </a>
+            </h2>
+            
+            <!-- Filter row layout -->
+            <div class="filter-row">
+                <!-- Year filter -->
+                <div class="filter-group">
+                    <label for="year">Year:</label>
+                    <select id="year">
+                        <!-- Year options will be dynamically generated via JavaScript -->
+                    </select>
+                </div>
+
+                <!-- Direction filter -->
+                <div class="filter-group">
+                    <label for="direction">Direction:</label>
+                    <select id="direction">
+                        <option value="Inwards">Inwards</option>
+                        <option value="Outwards">Outwards</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Search box in a separate row -->
+            <div class="search-row">
+                <div class="filter-group">
+                    <label for="search">Search Port:</label>
+                    <div class="search-container">
+                        <input type="text" id="search" placeholder="Enter port name">
+                        <button id="search-button">
+                            <i class="fas fa-search"></i> <!-- Add search icon -->
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legend -->
+        <div id="legend" class="legend">
+            <!-- Legend content will be dynamically generated via JavaScript -->
+        </div>
+    </div>
+
+    <!-- Maptiler GL JS -->
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.umd.min.js"></script>
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
